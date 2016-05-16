@@ -47,10 +47,10 @@ var fs 		= require('fs');
 	Desnsidade vertical:  1,27 -> 12,70mm
 	Densidade horizontal: 4,75 -> 47,50mm
 
-	Altura etiqueta: 	1,27   -> 12,70mm
+	Altura etiqueta:    1,27   -> 12,70mm
 	Largura etiqueta:   4,44   -> 44,00mm
 
-	Numero colunas: 	4
+	Numero colunas:     4
 	Numero de linhas:   20
 	
 	Total 80 etiquetas
