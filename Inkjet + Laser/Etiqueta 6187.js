@@ -7,15 +7,15 @@ function setarEstrutura(){
 	for(var i=1; i<=numeroLinhas; i++){	
 
 		doc.lineJoin('round')
-			.rect(14.50, (altura * i ), largura, altura)    // Primeira coluna 14.5 pois é o inico da margem
+			.rect(14.50, (altura * i ), largura, altura)    // Primeira coluna 14.5 pois é o inicio da margem
 			.stroke();										
 
 		doc.lineJoin('round')
-			.rect(62.00, (altura * i ), largura, altura)   // Segunda coluna + a margem mais densidadeHorizontal
+			.rect(62.00, (altura * i ), largura, altura)   // Segunda coluna + a margem mais densidade horizontal
 			.stroke();
 
 		doc.lineJoin('round')
-			.rect(109.05, (altura * i ), largura, altura)  // Terceira coluna é densidade anterior '62' + densidadeHorizontal '47.50'
+			.rect(109.05, (altura * i ), largura, altura)  // Terceira coluna é densidade anterior '62' + densidade horizontal '47.50'
 			.stroke();
 				
 		doc.lineJoin('round')
@@ -34,7 +34,7 @@ function setarTextoEtiqueta(texto, marginEsquerda, marginSuperior){
 	Adicionando os módulos necessários				
 */
 var PDFDocument = require('pdfkit');                      
-var fs 			= require('fs');			
+var fs 		= require('fs');			
 
 /*	
 	CRIAMOS O EXEMPLO DA PIMACO 6187 
@@ -69,8 +69,8 @@ var numeroLinhas        = 20;
 var densidadeHorizontal = 47.50;
 
 // Tamanho da etiqueta (informações de acordo com Pimaco)
-var altura              = 12.70
-var largura             = 44.00;			
+var altura   = 12.70
+var largura  = 44.00;			
 
 /*	
 	Criamos a folha de acordo com as dimenssões dadas pela Pimaco
