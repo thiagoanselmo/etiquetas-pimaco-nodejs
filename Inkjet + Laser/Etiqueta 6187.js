@@ -6,7 +6,7 @@ function setarEstrutura(){
 
 	for(var i=1; i<=numeroLinhas; i++){	
 
-			doc.lineJoin('round')
+		doc.lineJoin('round')
 			.rect(14.50, (altura * i ), largura, altura)    // Primeira coluna 14.5 pois é o inico da margem
 			.stroke();										
 
@@ -109,12 +109,12 @@ doc.fontSize(8);
 	for(var i=1; i<=numeroLinhas; i++){
 
 		/*
-		O i corresponde a linha que estou imprimindo.
-
-		14.50 + 3 -> É utilizado para centralizar o nome caso o nome não estja no centro pois '14.50' é a margem a esquerda
-		então adicionamos ele mais para 'dentro' da margem
-
-		Fizemos isso mesma coisa com a altura adicionamos um pouco para baixo da margem.
+			O 'i' corresponde a linha que estou imprimindo.
+	
+			14.50 + 3 -> É utilizado para centralizar o nome caso o nome não estja no centro pois '14.50' é a margem a esquerda
+			então adicionamos ele mais para 'dentro' da margem
+	
+			Fizemos isso mesma coisa com a altura adicionamos um pouco para baixo da margem.
 		*/
 
 		// Espaçamentos coluna 01 
