@@ -6,10 +6,13 @@ function sequencial(texto){
 	var totalColuna = 4;
 	var totalLinha  = 20;
 
+	// Varremos todas colunas
 	for(var i=1; i<=totalColuna; i++){
 
+		// Varremos todas linhas
 		for(var j=1; j<=totalLinha; j++){
 
+			// Escrevemos na etiqueta
 			linhaVsColuna(texto, j, i);
 		}
 	}
@@ -23,28 +26,28 @@ function linhaVsColuna(texto, linha, coluna){
 	switch(coluna){
 
 		case 1: 
-			if(linha == 1){ 	  			 	 setarTextoEtiqueta(texto, coluna01, altura); }
+				if(linha == 1){ 	  			 	 setarTextoEtiqueta(texto, coluna01, altura); }
 				if(linha>1 && linha<=6){  			 setarTextoEtiqueta(texto, coluna01,  (altura * linha) + (linha/2) ); } 				
 				if(linha>6 && linha<=10){ 			 setarTextoEtiqueta(texto, coluna01,  (altura * linha) + (linha/1.5)); }
 				if(linha>10 && linha<=numeroLinhas){ setarTextoEtiqueta(texto, coluna01,  (altura * linha) + (linha/1.7)); }
 			break;
 		
 		case 2:
-			if(linha == 1){ 	  			 	 setarTextoEtiqueta(texto, coluna02, altura); }
+				if(linha == 1){ 	  			 	 setarTextoEtiqueta(texto, coluna02, altura); }
 				if(linha>1 && linha<=6){  			 setarTextoEtiqueta(texto, coluna02,  (altura * linha) + (linha/2) ); } 				
 				if(linha>6 && linha<=10){ 			 setarTextoEtiqueta(texto, coluna02,  (altura * linha) + (linha/1.5)); }
 				if(linha>10 && linha<=numeroLinhas){ setarTextoEtiqueta(texto, coluna02,  (altura * linha) + (linha/1.7)); } 
 			break;
 		
 		case 3:
-			if(linha == 1){ 	  			 	 setarTextoEtiqueta(texto, coluna03, altura); }
+				if(linha == 1){ 	  			 	 setarTextoEtiqueta(texto, coluna03, altura); }
 				if(linha>1 && linha<=6){  			 setarTextoEtiqueta(texto, coluna03,  (altura * linha) + (linha/2) ); } 				
 				if(linha>6 && linha<=10){ 			 setarTextoEtiqueta(texto, coluna03,  (altura * linha) + (linha/1.5)); }
 				if(linha>10 && linha<=numeroLinhas){ setarTextoEtiqueta(texto, coluna03,  (altura * linha) + (linha/1.7)); }
 			break;
 		
 		case 4:
-			if(linha == 1){ 	  			 	 setarTextoEtiqueta(texto, coluna04, altura); }
+				if(linha == 1){ 	  			 	 setarTextoEtiqueta(texto, coluna04, altura); }
 				if(linha>1 && linha<=6){  			 setarTextoEtiqueta(texto, coluna04,  (altura * linha) + (linha/2) ); } 				
 				if(linha>6 && linha<=10){ 			 setarTextoEtiqueta(texto, coluna04,  (altura * linha) + (linha/1.5)); }
 				if(linha>10 && linha<=numeroLinhas){ setarTextoEtiqueta(texto, coluna04,  (altura * linha) + (linha/1.7)); }
@@ -96,7 +99,11 @@ doc = new PDFDocument({
 });			
 
 // Escolhemos o tamanho da fonte
-doc.fontSize(6); 			
+doc.fontSize(6);		
+
+//Vamos popular com as etiquetas passando o nome, linha, coluna
+linhaVsColuna('CIE', 2, 2);
+linhaVsColuna('ANSELMO', 20, 2); 			
 
 /*
 	Vamos popular com as etiquetas passando o nome, linha, coluna
