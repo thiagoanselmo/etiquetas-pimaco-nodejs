@@ -1,4 +1,22 @@
-// Vamos receber a texto linha e coluna para podermos fazer a impressão da etiqueta
+
+
+// Quando temos um texto e queremos imprimir em todas as 80 etiqueta o mesmo nome
+function sequencial(texto){
+
+	var totalColuna = 4;
+	var totalLinha  = 20;
+
+	for(var i=1; i<=totalColuna; i++){
+
+		for(var j=1; j<=totalLinha; j++){
+
+			linhaVsColuna(texto, j, i);
+		}
+	}
+
+}
+
+// Vamos reeber a texto linha e coluna para podermos fazer a impressão da etiqueta
 function linhaVsColuna(texto, linha, coluna){
 
 	// Caso a coluna for:
@@ -37,7 +55,7 @@ function linhaVsColuna(texto, linha, coluna){
 function setarTextoEtiqueta(texto, marginEsquerda, marginSuperior){
 
 	doc.text(texto, marginEsquerda,  marginSuperior, {height: altura, width:largura, align: 'center'} )
-}  	
+}
 
 /*
 	Adicionando os módulos necessários				
@@ -80,9 +98,19 @@ doc = new PDFDocument({
 // Escolhemos o tamanho da fonte
 doc.fontSize(6); 			
 
-	//Vamos popular com as etiquetas passando o nome, linha, coluna
-	linhaVsColuna('CIE', 2, 2);
-	linhaVsColuna('ANSELMO', 20, 2); 			
+/*
+	Vamos popular com as etiquetas passando o nome, linha, coluna
+*/
+linhaVsColuna('JANIO', 3, 2);
+linhaVsColuna('ANSELMO', 4, 2);
+linhaVsColuna('ANSELMO', 5, 2);
+linhaVsColuna('ANSELMO', 6, 2);
+linhaVsColuna('ANSELMO', 7, 2); 			
+
+/*
+	Caso eu queira imprimir nas 80 etiquetas o mesmo nome
+*/
+//sequencial('THIAGO');
 
 /*
 	Finaliza o PDF e gera ele;
