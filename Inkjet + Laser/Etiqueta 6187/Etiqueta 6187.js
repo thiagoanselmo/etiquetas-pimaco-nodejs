@@ -80,9 +80,9 @@ doc = new PDFDocument({
 // Escolhemos o tamanho da fonte
 doc.fontSize(6); 			
 
-	//Vamos popular com as etiquetas passando o nome, linha, coluna
-	linhaVsColuna('CIE', 2, 2);
-	linhaVsColuna('ANSELMO', 20, 2); 			
+//Vamos popular com as etiquetas passando o nome, linha, coluna
+linhaVsColuna('CIE', 2, 2);
+linhaVsColuna('ANSELMO', 20, 2); 			
 
 /*
 	Finaliza o PDF e gera ele;
