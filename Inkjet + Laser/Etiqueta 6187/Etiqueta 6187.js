@@ -26,30 +26,30 @@ function linhaVsColuna(texto, linha, coluna){
 	switch(coluna){
 
 		case 1: 
-			if(linha == 1){ 	  			 	 setarTextoEtiqueta(texto, coluna01, altura); }
-			if(linha>1 && linha<=6){  			 setarTextoEtiqueta(texto, coluna01,  (altura * linha) + (linha/2) ); } 				
-			if(linha>6 && linha<=10){ 			 setarTextoEtiqueta(texto, coluna01,  (altura * linha) + (linha/1.5)); }
+			if(linha == 1){ 	  	     setarTextoEtiqueta(texto, coluna01, altura); }
+			if(linha>1 && linha<=6){  	     setarTextoEtiqueta(texto, coluna01,  (altura * linha) + (linha/2) ); } 				
+			if(linha>6 && linha<=10){ 	     setarTextoEtiqueta(texto, coluna01,  (altura * linha) + (linha/1.5)); }
 			if(linha>10 && linha<=numeroLinhas){ setarTextoEtiqueta(texto, coluna01,  (altura * linha) + (linha/1.7)); }
 			break;
 		
 		case 2:
-			if(linha == 1){ 	  			 	 setarTextoEtiqueta(texto, coluna02, altura); }
-			if(linha>1 && linha<=6){  			 setarTextoEtiqueta(texto, coluna02,  (altura * linha) + (linha/2) ); } 				
-			if(linha>6 && linha<=10){ 			 setarTextoEtiqueta(texto, coluna02,  (altura * linha) + (linha/1.5)); }
+			if(linha == 1){ 	  	     setarTextoEtiqueta(texto, coluna02, altura); }
+			if(linha>1 && linha<=6){  	     setarTextoEtiqueta(texto, coluna02,  (altura * linha) + (linha/2) ); } 				
+			if(linha>6 && linha<=10){ 	     setarTextoEtiqueta(texto, coluna02,  (altura * linha) + (linha/1.5)); }
 			if(linha>10 && linha<=numeroLinhas){ setarTextoEtiqueta(texto, coluna02,  (altura * linha) + (linha/1.7)); } 
 			break;
 		
 		case 3:
-			if(linha == 1){ 	  			 	 setarTextoEtiqueta(texto, coluna03, altura); }
-			if(linha>1 && linha<=6){  			 setarTextoEtiqueta(texto, coluna03,  (altura * linha) + (linha/2) ); } 				
-			if(linha>6 && linha<=10){ 			 setarTextoEtiqueta(texto, coluna03,  (altura * linha) + (linha/1.5)); }
+			if(linha == 1){ 	  	     setarTextoEtiqueta(texto, coluna03, altura); }
+			if(linha>1 && linha<=6){  	     setarTextoEtiqueta(texto, coluna03,  (altura * linha) + (linha/2) ); } 				
+			if(linha>6 && linha<=10){ 	     setarTextoEtiqueta(texto, coluna03,  (altura * linha) + (linha/1.5)); }
 			if(linha>10 && linha<=numeroLinhas){ setarTextoEtiqueta(texto, coluna03,  (altura * linha) + (linha/1.7)); }
 			break;
 		
 		case 4:
-			if(linha == 1){ 	  			 	 setarTextoEtiqueta(texto, coluna04, altura); }
-			if(linha>1 && linha<=6){  			 setarTextoEtiqueta(texto, coluna04,  (altura * linha) + (linha/2) ); } 				
-			if(linha>6 && linha<=10){ 			 setarTextoEtiqueta(texto, coluna04,  (altura * linha) + (linha/1.5)); }
+			if(linha == 1){ 	  	     setarTextoEtiqueta(texto, coluna04, altura); }
+			if(linha>1 && linha<=6){  	     setarTextoEtiqueta(texto, coluna04,  (altura * linha) + (linha/2) ); } 				
+			if(linha>6 && linha<=10){ 	     setarTextoEtiqueta(texto, coluna04,  (altura * linha) + (linha/1.5)); }
 			if(linha>10 && linha<=numeroLinhas){ setarTextoEtiqueta(texto, coluna04,  (altura * linha) + (linha/1.7)); }
 			break;
 	}
