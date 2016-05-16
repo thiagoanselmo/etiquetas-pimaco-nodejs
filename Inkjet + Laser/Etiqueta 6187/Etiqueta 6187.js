@@ -9,7 +9,7 @@ function sequencial(texto){
 	// Varremos todas colunas
 	for(var i=1; i<=totalColuna; i++){
 
-		// Varremos todas linhas
+	 	// Varremos todas linhas
 		for(var j=1; j<=totalLinha; j++){
 
 			// Escrevemos na etiqueta
@@ -26,31 +26,31 @@ function linhaVsColuna(texto, linha, coluna){
 	switch(coluna){
 
 		case 1: 
-				if(linha == 1){ 	  			 	 setarTextoEtiqueta(texto, coluna01, altura); }
-				if(linha>1 && linha<=6){  			 setarTextoEtiqueta(texto, coluna01,  (altura * linha) + (linha/2) ); } 				
-				if(linha>6 && linha<=10){ 			 setarTextoEtiqueta(texto, coluna01,  (altura * linha) + (linha/1.5)); }
-				if(linha>10 && linha<=numeroLinhas){ setarTextoEtiqueta(texto, coluna01,  (altura * linha) + (linha/1.7)); }
+			if(linha == 1){ 	  			 	 setarTextoEtiqueta(texto, coluna01, altura); }
+			if(linha>1 && linha<=6){  			 setarTextoEtiqueta(texto, coluna01,  (altura * linha) + (linha/2) ); } 				
+			if(linha>6 && linha<=10){ 			 setarTextoEtiqueta(texto, coluna01,  (altura * linha) + (linha/1.5)); }
+			if(linha>10 && linha<=numeroLinhas){ setarTextoEtiqueta(texto, coluna01,  (altura * linha) + (linha/1.7)); }
 			break;
 		
 		case 2:
-				if(linha == 1){ 	  			 	 setarTextoEtiqueta(texto, coluna02, altura); }
-				if(linha>1 && linha<=6){  			 setarTextoEtiqueta(texto, coluna02,  (altura * linha) + (linha/2) ); } 				
-				if(linha>6 && linha<=10){ 			 setarTextoEtiqueta(texto, coluna02,  (altura * linha) + (linha/1.5)); }
-				if(linha>10 && linha<=numeroLinhas){ setarTextoEtiqueta(texto, coluna02,  (altura * linha) + (linha/1.7)); } 
+			if(linha == 1){ 	  			 	 setarTextoEtiqueta(texto, coluna02, altura); }
+			if(linha>1 && linha<=6){  			 setarTextoEtiqueta(texto, coluna02,  (altura * linha) + (linha/2) ); } 				
+			if(linha>6 && linha<=10){ 			 setarTextoEtiqueta(texto, coluna02,  (altura * linha) + (linha/1.5)); }
+			if(linha>10 && linha<=numeroLinhas){ setarTextoEtiqueta(texto, coluna02,  (altura * linha) + (linha/1.7)); } 
 			break;
 		
 		case 3:
-				if(linha == 1){ 	  			 	 setarTextoEtiqueta(texto, coluna03, altura); }
-				if(linha>1 && linha<=6){  			 setarTextoEtiqueta(texto, coluna03,  (altura * linha) + (linha/2) ); } 				
-				if(linha>6 && linha<=10){ 			 setarTextoEtiqueta(texto, coluna03,  (altura * linha) + (linha/1.5)); }
-				if(linha>10 && linha<=numeroLinhas){ setarTextoEtiqueta(texto, coluna03,  (altura * linha) + (linha/1.7)); }
+			if(linha == 1){ 	  			 	 setarTextoEtiqueta(texto, coluna03, altura); }
+			if(linha>1 && linha<=6){  			 setarTextoEtiqueta(texto, coluna03,  (altura * linha) + (linha/2) ); } 				
+			if(linha>6 && linha<=10){ 			 setarTextoEtiqueta(texto, coluna03,  (altura * linha) + (linha/1.5)); }
+			if(linha>10 && linha<=numeroLinhas){ setarTextoEtiqueta(texto, coluna03,  (altura * linha) + (linha/1.7)); }
 			break;
 		
 		case 4:
-				if(linha == 1){ 	  			 	 setarTextoEtiqueta(texto, coluna04, altura); }
-				if(linha>1 && linha<=6){  			 setarTextoEtiqueta(texto, coluna04,  (altura * linha) + (linha/2) ); } 				
-				if(linha>6 && linha<=10){ 			 setarTextoEtiqueta(texto, coluna04,  (altura * linha) + (linha/1.5)); }
-				if(linha>10 && linha<=numeroLinhas){ setarTextoEtiqueta(texto, coluna04,  (altura * linha) + (linha/1.7)); }
+			if(linha == 1){ 	  			 	 setarTextoEtiqueta(texto, coluna04, altura); }
+			if(linha>1 && linha<=6){  			 setarTextoEtiqueta(texto, coluna04,  (altura * linha) + (linha/2) ); } 				
+			if(linha>6 && linha<=10){ 			 setarTextoEtiqueta(texto, coluna04,  (altura * linha) + (linha/1.5)); }
+			if(linha>10 && linha<=numeroLinhas){ setarTextoEtiqueta(texto, coluna04,  (altura * linha) + (linha/1.7)); }
 			break;
 	}
 }	    	
@@ -64,9 +64,9 @@ function setarTextoEtiqueta(texto, marginEsquerda, marginSuperior){
 	Adicionando os módulos necessários				
 */
 var PDFDocument = require('pdfkit');                      
-var fs 			= require('fs');		
+var fs 		= require('fs');		
 
-/*	CRIAMOS O EXEMPLO DA PIMACO 6187 */
+/* CRIAMOS O EXEMPLO DA PIMACO 6187 */
 
 // Tamanhos das paginas que Pimaco trabalha (informações de acordo com Pimaco)
 var papelCartaPimaco   = [215.90, 279.40];				
@@ -85,17 +85,17 @@ var coluna03 = 107.50;
 var coluna04 = 157.00;
 
 /*	
-	Criamos a folha de acordo com as dimenssões dadas pela Pimaco
+    Criamos a folha de acordo com as dimenssões dadas pela Pimaco
 */
 
 doc = new PDFDocument({
 	size: papelCartaPimaco,
 	margins: {
-    	top: 12.70,
-    	bottom: 12.70, 	        	
-    	left: 14.50,
-    	right: 14.50
- 	}
+	    top: 12.70,
+	    bottom: 12.70, 	        	
+	    left: 14.50,
+	    right: 14.50
+	 }
 });			
 
 // Escolhemos o tamanho da fonte
@@ -106,7 +106,7 @@ linhaVsColuna('CIE', 2, 2);
 linhaVsColuna('ANSELMO', 20, 2); 			
 
 /*
-	Vamos popular com as etiquetas passando o nome, linha, coluna
+    Vamos popular com as etiquetas passando o nome, linha, coluna
 */
 linhaVsColuna('JANIO', 3, 2);
 linhaVsColuna('ANSELMO', 4, 2);
@@ -115,12 +115,12 @@ linhaVsColuna('ANSELMO', 6, 2);
 linhaVsColuna('ANSELMO', 7, 2); 			
 
 /*
-	Caso eu queira imprimir nas 80 etiquetas o mesmo nome
+    Caso eu queira imprimir nas 80 etiquetas o mesmo nome
 */
 //sequencial('THIAGO');
 
 /*
-	Finaliza o PDF e gera ele;
+   Finaliza o PDF e gera ele;
 */			
 doc.end();			
 
