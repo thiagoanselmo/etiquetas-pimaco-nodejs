@@ -1,7 +1,43 @@
+// Vamos receber a texto linha e coluna para podermos fazer a impressão da etiqueta
+function linhaVsColuna(texto, linha, coluna){
+
+	// Caso a coluna for:
+	switch(coluna){
+
+		case 1: 
+			if(linha == 1){ 	  			 	 setarTextoEtiqueta(texto, coluna01, altura); }
+				if(linha>1 && linha<=6){  			 setarTextoEtiqueta(texto, coluna01,  (altura * linha) + (linha/2) ); } 				
+				if(linha>6 && linha<=10){ 			 setarTextoEtiqueta(texto, coluna01,  (altura * linha) + (linha/1.5)); }
+				if(linha>10 && linha<=numeroLinhas){ setarTextoEtiqueta(texto, coluna01,  (altura * linha) + (linha/1.7)); }
+			break;
+		
+		case 2:
+			if(linha == 1){ 	  			 	 setarTextoEtiqueta(texto, coluna02, altura); }
+				if(linha>1 && linha<=6){  			 setarTextoEtiqueta(texto, coluna02,  (altura * linha) + (linha/2) ); } 				
+				if(linha>6 && linha<=10){ 			 setarTextoEtiqueta(texto, coluna02,  (altura * linha) + (linha/1.5)); }
+				if(linha>10 && linha<=numeroLinhas){ setarTextoEtiqueta(texto, coluna02,  (altura * linha) + (linha/1.7)); } 
+			break;
+		
+		case 3:
+			if(linha == 1){ 	  			 	 setarTextoEtiqueta(texto, coluna03, altura); }
+				if(linha>1 && linha<=6){  			 setarTextoEtiqueta(texto, coluna03,  (altura * linha) + (linha/2) ); } 				
+				if(linha>6 && linha<=10){ 			 setarTextoEtiqueta(texto, coluna03,  (altura * linha) + (linha/1.5)); }
+				if(linha>10 && linha<=numeroLinhas){ setarTextoEtiqueta(texto, coluna03,  (altura * linha) + (linha/1.7)); }
+			break;
+		
+		case 4:
+			if(linha == 1){ 	  			 	 setarTextoEtiqueta(texto, coluna04, altura); }
+				if(linha>1 && linha<=6){  			 setarTextoEtiqueta(texto, coluna04,  (altura * linha) + (linha/2) ); } 				
+				if(linha>6 && linha<=10){ 			 setarTextoEtiqueta(texto, coluna04,  (altura * linha) + (linha/1.5)); }
+				if(linha>10 && linha<=numeroLinhas){ setarTextoEtiqueta(texto, coluna04,  (altura * linha) + (linha/1.7)); }
+			break;
+	}
+}	    	
+
 function setarTextoEtiqueta(texto, marginEsquerda, marginSuperior){
 
 	doc.text(texto, marginEsquerda,  marginSuperior, {height: altura, width:largura, align: 'center'} )
-}	    	
+}  	
 
 /*
 	Adicionando os módulos necessários				
@@ -9,41 +45,23 @@ function setarTextoEtiqueta(texto, marginEsquerda, marginSuperior){
 var PDFDocument = require('pdfkit');                      
 var fs 			= require('fs');		
 
-/*	
-	CRIAMOS O EXEMPLO DA PIMACO 6187 
-	
-	Tamanho da pagina: 21,59 x 27,94 cm -> 215,90 x 279,40
-
-	Margem superiror:  1,27cm  -> 12,70mm
-	Margem lateral:    1,45cm  -> 14,50mm
-
-	Desnsidade vertical:  1,27 -> 12,70mm
-	Densidade horizontal: 4,75 -> 47,50mm
-
-	Altura etiqueta: 	1,27   -> 12,70mm
-	Largura etiqueta:   4,44   -> 44,00mm
-
-	Numero colunas: 	4
-	Numero de linhas:   20
-	
-	Total 80 etiquetas
-
-	// Densidade horizontal -> É o espaçamento entre as etiquetas 'linha'
-	// Densidade vertical   -> É o espaçamento entre as etiquetas 'coluna'
-
-*/
+/*	CRIAMOS O EXEMPLO DA PIMACO 6187 */
 
 // Tamanhos das paginas que Pimaco trabalha (informações de acordo com Pimaco)
-var papelCartaPimaco   = [215.90, 279.40];
-var papelA4Pimaco      = [210.00, 297.00];				
+var papelCartaPimaco   = [215.90, 279.40];				
 
-// Número de linha e espaçamento das etiquetas (informações de acordo com Pimaco)
-var numeroLinhas        = 20;			
-var densidadeHorizontal = 47.50;
+// Número de linha das etiquetas (informações de acordo com Pimaco)
+var numeroLinhas = 20;			
 
 // Tamanho da etiqueta (informações de acordo com Pimaco)
-var altura              = 12.70;
-var largura             = 44.40;			
+var altura  = 12.70;
+var largura = 44.40;
+
+// Espaçamento das colunas em mm
+var coluna01 = 5.50;
+var coluna02 = 58.00;
+var coluna03 = 107.50;
+var coluna04 = 157.00;
 
 /*	
 	Criamos a folha de acordo com as dimenssões dadas pela Pimaco
@@ -62,36 +80,9 @@ doc = new PDFDocument({
 // Escolhemos o tamanho da fonte
 doc.fontSize(6); 			
 
-	//Vamos popular com as etiquetas
-	for(var i=1; i<=numeroLinhas; i++){
-
-		/*
-		O i corresponde a linha que estou imprimindo.
-
-		14.50 + 3 -> É utilizado para centralizar o nome caso o nome não estja no centro pois '14.50' é a margem a esquerda
-		então adicionamos ele mais para 'dentro' da margem
-
-		Fizemos isso mesma coisa com a altura adicionamos um pouco para baixo da margem.
-		*/
-
-		// Espaçamentos coluna 01  				
-
-		if(i == 1){ 					
-			setarTextoEtiqueta('CIE 0000' + i, 5.50, altura);
-		}
-
-		if(i>1 && i<=6){
-			setarTextoEtiqueta('CIE 0000' + i, 5.50,  (altura * i) + (i/2) );
-		}
-		
-		if(i>6 && i<=10){
-			setarTextoEtiqueta('CIE 0000' + i, 5.50,  (altura * i) + (i/1.5));
-		}
-
-		if(i>10 && i<=numeroLinhas){
-			setarTextoEtiqueta('CIE 0000' + i, 5.50,  (altura * i) + (i/1.7)); // maior a divisão mais para cima ele insere o texto
-		} 				
-	}
+	//Vamos popular com as etiquetas passando o nome, linha, coluna
+	linhaVsColuna('CIE', 2, 2);
+	linhaVsColuna('ANSELMO', 20, 2); 			
 
 /*
 	Finaliza o PDF e gera ele;
